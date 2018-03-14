@@ -1,0 +1,115 @@
+<div class="container-fluid">
+	<div class="login-form">
+		<form novalidate #loginForm="ngForm">
+			<div class="tab-content">
+				<div id="homeactive" class="tab-pane fade in active">
+					<div class="form-group">
+						<label>First Name:</label>
+						<input type="text" name="fname" #fname="ngModel" [(ngModel)]="userDetails.fname" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<span *ngIf="fname.errors && fname.invalid && fname.touched && fname.errors.required">
+							First Name is required
+						</span>
+					</div>
+					<!-- touched : -  {{fname.touched}} <br> pristine: {{fname.pristine}} <br> dirty :- {{fname.dirty}}
+					<br> required :- {{fname.errors | json }} <br> invalid :- {{fname.invalid}} -->
+					<div class="form-group">
+						<label>Last Name:</label>
+						<input type="text" class="form-control" name="lname" #lname="ngModel" [(ngModel)]="userDetails.lname" required>
+					</div>
+					<div class="form-group">
+						<span *ngIf="lname.errors && lname.touched && lname.errors.required">
+							Last Name is required
+						</span>
+					</div>
+					<div class="form-group">
+						<label>Dob:</label>
+						<input type="date" class="form-control" name="dob" #dob="ngModel" [(ngModel)]="userDetails.dob" required>
+					</div>
+					<div class="form-group">
+						<span *ngIf="dob.errors && dob.touched && dob.errors.required">
+							dob is required
+						</span>
+					</div>
+					<div class="form-group">
+						<label>Gender:</label>
+						<input type="radio" class="" name="gender" #gender="ngModel" [(ngModel)]="userDetails.gender" required> Male
+						<input type="radio" class="" name="gender" #gender="ngModel" [(ngModel)]="userDetails.gender" required> Female
+					</div>
+					<div class="form-group">
+						<span *ngIf="gender.errors && gender.touched && gender.errors.required">
+							gender is required
+						</span>
+					</div>
+					<div class="form-group">
+						<label>Email:</label>
+						<input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="userDetails.email" required>
+					</div>
+					<div class="form-group">
+						<span *ngIf="email.errors && email.touched && email.errors.required">
+							email is required
+						</span>
+					</div>
+					<div class="form-group">
+						<label>Password:</label>
+						<input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="userDetails.password" required>
+					</div>
+					<div class="form-group">
+						<span *ngIf="password.errors && password.touched && password.errors.required">
+							password is required
+						</span>
+					</div>
+					
+							<a data-toggle="tab" class="btn" href="#homenext">Next</a>
+				</div>
+				<div id="homenext" class="tab-pane fade">
+						<div class="form-group">
+							<label>Address:</label>
+							<textarea class="form-control textarea" name="address" #address="ngModel" [(ngModel)]="userDetails.address" required></textarea>
+						</div>
+						<div class="form-group">
+							<span *ngIf="address.errors && address.touched && address.errors.required">
+								address is required
+							</span>
+						</div>
+						<div class="form-group">
+							<label>City:</label>
+							<input type="text" class="form-control" name="city" #city="ngModel" [(ngModel)]="userDetails.city" required>
+						</div>
+						<div class="form-group">
+							<span *ngIf="city.errors && city.touched && city.errors.required">
+								City is required
+							</span>
+						</div>
+						<div class="form-group">
+							<label>State:</label>
+							<input type="text" class="form-control" name="state" #state="ngModel" [(ngModel)]="userDetails.state" required>
+						</div>
+						<div class="form-group">
+							<span *ngIf="state.errors && state.touched && state.errors.required">
+								State is required
+							</span>
+						</div>
+						<div class="form-group">
+							<label>Zipcode:</label>
+							<input type="text" class="form-control" name="zipcode" #zipcode="ngModel" [(ngModel)]="userDetails.zipcode" required>
+						</div>
+						<div class="form-group">
+							<span *ngIf="zipcode.errors && zipcode.touched && zipcode.errors.required">
+								Zipcode is required
+							</span>
+						</div>
+							<a data-toggle="tab" class="btn" href="#homeactive">Previous</a>
+						
+							<a data-toggle="tab" class="btn" href="#homesubmit">Submit</a>
+						
+					
+
+				</div>
+			</div>
+
+		</form>
+
+	</div>
+</div>
