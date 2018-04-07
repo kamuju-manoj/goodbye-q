@@ -2,5 +2,6 @@
 
 .login-form{ width: 95%; margin: 2% auto;}
 .login-form .form-group{ margin-bottom: 4px;}
-.login-form .form-control{ height: 25px;}
+.login-form .form-control{ height: 30px;}
 .login-form .textarea{ height: 70px;}
+.btn{ margin-top: 10px;}

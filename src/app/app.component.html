@@ -34,8 +34,8 @@
 					</div>
 					<div class="form-group">
 						<label>Gender:</label>
-						<input type="radio" class="" name="gender" #gender="ngModel" [(ngModel)]="userDetails.gender" required> Male
-						<input type="radio" class="" name="gender" #gender="ngModel" [(ngModel)]="userDetails.gender" required> Female
+						<input type="radio" class="" name="gender" #gender="ngModel" value="Male" [(ngModel)]="userDetails.gender" required> Male
+						<input type="radio" class="" name="gender" #gender="ngModel" value="Female" [(ngModel)]="userDetails.gender" required> Female
 					</div>
 					<div class="form-group">
 						<span *ngIf="gender.errors && gender.touched && gender.errors.required">
@@ -61,7 +61,7 @@
 						</span>
 					</div>
 					
-							<a data-toggle="tab" class="btn" href="#homenext">Next</a>
+							<a data-toggle="tab" class="btn btn-primary" href="#homenext">Next</a>
 				</div>
 				<div id="homenext" class="tab-pane fade">
 						<div class="form-group">
@@ -100,9 +100,9 @@
 								Zipcode is required
 							</span>
 						</div>
-							<a data-toggle="tab" class="btn" href="#homeactive">Previous</a>
+							<a data-toggle="tab" class="btn btn-primary" href="#homeactive">Previous</a>
 						
-							<a data-toggle="tab" class="btn" href="#homesubmit">Submit</a>
+							<input type="submit" class="btn btn-primary" (click)="register()" [disabled]="loginForm.invalid" value="Submit">
 						
 					
 
